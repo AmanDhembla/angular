@@ -10,10 +10,10 @@
 
       <input type="text" placeholder="name" ng-model="item_name">
     <input type="text" placeholder="quantity" ng-model="item_quantity">
-
-    <button type="button" ng-click="save_to_list()">Put It in</button>
+    <button type="button" ng-click="save_to_list()">Put It in</button><br ><br >
+      Sort the list acc to value <input type="text" placeholder="search value" ng-model="search">
     <ol>
-      <li ng-repeat="item in shoppingList2">{{item.quantity}} of {{item.name}}</li>
+      <li ng-repeat="item in shoppingList1 | filter : search">{{item}}</li>
     </ol>
   </body>
 </html>

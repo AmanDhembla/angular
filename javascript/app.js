@@ -9,7 +9,6 @@
   function myController($scope,$filter,lovesFilter){
       $scope.name="";
       $scope.value=0;
-
       $scope.calculateValue=function(){
         var fvalue=0;
         for(var i=0;i<$scope.name.length;i++){

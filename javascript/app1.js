@@ -21,6 +21,7 @@
   function listController($scope){
     $scope.shoppingList1=shoppingList1;
     $scope.shoppingList2=shoppingList2;
+    $scope.search="";
     $scope.save_to_list=function(){
       var item={
         name:$scope.item_name,
