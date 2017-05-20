@@ -3,7 +3,10 @@
 
   angular.module('myApp',[])
 
-  .controller('myController',function($scope){
+  .controller('myController',myController)
+  .filter('loves',FilterFactory);
+  myController.$inject=['$scope','$filter','lovesFilter'];
+  function myController($scope,$filter,lovesFilter){
       $scope.name="";
       $scope.value=0;
 
@@ -14,5 +17,25 @@
         }
         $scope.value=fvalue;
       };
-  });
+
+      $scope.say=function(){
+        var msg="i likes to eat cookies";
+        msg=lovesFilter(msg);
+        return msg;
+      }
+
+      $scope.upCase=function(){
+        var upper=$filter('uppercase');
+        $scope.name=upper($scope.name);
+      };
+  };
+
+
+  function FilterFactory(){
+    return function(input){
+      input=input || "";
+      input=input.replace("likes","loves");
+      return input;
+    };
+  }
 })();

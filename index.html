@@ -8,9 +8,10 @@
   </head>
   <body>
     <div ng-controller="myController">
-      <input type="text" ng-model="name" ng-keyup="calculateValue();">
+      <input type="text" ng-model="name" ng-keyup="calculateValue();" ng-blur="upCase()">
        Ascii value of your name is: {{value}}
-
+       <br><br >
+       {{say()}}
     </div>
   </body>
 </html>
