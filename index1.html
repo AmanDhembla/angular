@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="to_do_list">
+  <head>
+    <meta charset="utf-8">
+    <title>To-do-list</title>
+    <script src="javascript/angular.min.js" ></script>
+    <script type="text/javascript" src="javascript/app1.js"></script>
+  </head>
+  <body ng-controller="listController">
+
+      <input type="text" placeholder="name" ng-model="item_name">
+    <input type="text" placeholder="quantity" ng-model="item_quantity">
+
+    <button type="button" ng-click="save_to_list()">Put It in</button>
+    <ol>
+      <li ng-repeat="item in shoppingList2">{{item.quantity}} of {{item.name}}</li>
+    </ol>
+  </body>
+</html>
