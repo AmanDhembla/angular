@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping list</title>
+    <script type="text/javascript" src="javascript/angular.min.js"></script>
+    <script src="javascript/app3.js"></script>
+  </head>
+  <body ng-app="Sapp">
+    <h1>
+      Create your Shopping list
+    </h1>
+    <div ng-controller="createList as cList">
+      <input type="text" placeholder="name" ng-model="cList.name">
+      <input type="text" placeholder="quantity" ng-model="cList.quantity">
+      <button type="button" name="button" ng-click="cList.add();">Add item</button>
+      <div ng-controller="showList as sList">
+        <ol>
+          <li ng-repeat="item in sList.items">{{item.quantity}} of {{item.name}}
+             <button type="button" ng-click="sList.action($index)">Remove</button></li>
+
+        </ol>
+      </div>
+
+    </div>
+  </body>
+</html>
