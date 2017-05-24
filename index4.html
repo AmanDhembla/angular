@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Two Shoppng List</title>
+    <script src="javascript/angular.min.js"></script>
+    <script type="text/javascript" src="javascript/app4.js"></script>
+  </head>
+  <body ng-app="Sapp">
+    <div ng-controller="createList as ctrl1">
+      <input type="text" placeholder="name" ng-model="ctrl1.name">
+      <input type="text" placeholder="quantity" ng-model="ctrl1.quantity">
+      <button type="button" ng-click="ctrl1.ADD()">ADD item</button>
+        <ol>
+          <li ng-repeat="item in ctrl1.items">{{item.name}} of {{item.quantity}}
+            <button type="button" ng-click="ctrl1.REMOVE($index)">Remove</button>
+          </li>
+        </ol>
+    </div>
+    <div ng-controller="showList as ctrl2">
+      <input type="text" placeholder="name" ng-model="ctrl2.name">
+      <input type="text" placeholder="quantity" ng-model="ctrl2.quantity">
+      <button type="button" ng-click="ctrl2.ADD()">ADD item</button>
+        <ol>
+          <li ng-repeat="item in ctrl2.items">{{item.name}} of {{item.quantity}}
+            <button type="button" ng-click="ctrl2.REMOVE($index)">Remove</button
+          </li>
+        </ol>
+        {{ctrl2.errorMessage}}
+    </div>
+  </body>
+</html>
