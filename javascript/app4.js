@@ -3,7 +3,19 @@
   angular.module('Sapp',[])
   .controller('createList',createList1)
   .controller('showList',createList2)
-  .factory('Fname',CustomFactory);
+  .factory('Fname',CustomFactory)
+  .directive('listDirective',listDirective);
+
+  function listDirective(){
+    var ddo={
+
+      templateUrl:'data.html',
+      scope:{
+        ctrl: '=itemList'
+      }
+    }
+    return ddo;
+  }
 
   createList1.$inject=['Fname'];
 
@@ -34,7 +46,8 @@
 
   function createList2(Fname){
     var ctrl2=this;
-
+    // console.log(ctrl2);
+    // console.log(this);
     var CustomService2=Fname(3);
 
     ctrl2.name="";
