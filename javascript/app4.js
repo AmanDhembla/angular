@@ -16,13 +16,47 @@
       },
       controller:directiveController,
       controllerAs:'dctrl',
-      bindToController:true
+      bindToController:true,
+      link:directiveLink
     }
     return ddo;
   }
 
+  function directiveLink(scope,element,attrs,controller){
+    scope.$watch('dctrl.cookiesInList()',function(newValue,oldValue){
+      if(newValue===true){
+        displayCookieError();
+      }else{
+        hideCookieError();
+      }
+    });
+
+    function displayCookieError(){
+      var elem=element.find('div');
+      elem.css('display','block');
+    }
+
+    function hideCookieError(){
+      var elem=element.find('div');
+      elem.css('display','none');
+    }
+  }
+
   function directiveController(){
-    console.log(this);
+
+    var dctrl=this;
+
+    this.cookiesInList=function(){
+
+      for(var i=0;i<dctrl.ctrl.items.length;i++){
+        var name=dctrl.ctrl.items[i].name;
+        if(name.toLowerCase().indexOf("cookie")!== -1){
+          return true;
+        }
+
+      }
+        return false;
+    }
 
   }
   createList1.$inject=['Fname'];
