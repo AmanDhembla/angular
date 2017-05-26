@@ -11,12 +11,20 @@
 
       templateUrl:'data.html',
       scope:{
-        ctrl: '=itemList'
-      }
+        ctrl: '=itemList',
+        Remove:'&sub'
+      },
+      controller:directiveController,
+      controllerAs:'dctrl',
+      bindToController:true
     }
     return ddo;
   }
 
+  function directiveController(){
+    console.log(this);
+
+  }
   createList1.$inject=['Fname'];
 
   function createList1(Fname){
@@ -28,8 +36,8 @@
     ctrl1.ADD=function(){
       if(ctrl1.name!==""&&ctrl1.quantity!==""){
       CustomService1.addItem(ctrl1.name,ctrl1.quantity);
-      // ctrl1.name="";
-      // ctrl1.quantity="";
+      ctrl1.name="";
+      ctrl1.quantity="";
     }
   }}catch(error){
     ctrl1.ERROR=error.message;

@@ -12,7 +12,7 @@
       <input type="text" placeholder="quantity" ng-model="ctrl1.quantity">
       <button type="button" ng-click="ctrl1.ADD()">ADD item</button>
         <ol>
-          <list-directive item-list="ctrl1"></list-directive>
+          <list-directive item-list="ctrl1" sub="ctrl1.REMOVE(index)"></list-directive>
         </ol>
     </div>
     <div ng-controller="showList as ctrl2">
@@ -20,7 +20,7 @@
       <input type="text" placeholder="quantity" ng-model="ctrl2.quantity">
       <button type="button" ng-click="ctrl2.ADD()">ADD item</button>
         <ol>
-          <list-directive item-list="ctrl2"></list-directive>
+          <list-directive item-list="ctrl2" sub="ctrl2.REMOVE(index)" ></list-directive>
         </ol>
         <div ng-if="ctrl2.errorMessage">ERROR:{{ctrl2.errorMessage}}</div>
     </div>
