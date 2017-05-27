@@ -4,23 +4,49 @@
   .controller('createList',createList1)
   .controller('showList',createList2)
   .factory('Fname',CustomFactory)
-  .directive('listDirective',listDirective);
-
-  function listDirective(){
-    var ddo={
-
-      templateUrl:'data.html',
-      scope:{
-        ctrl: '=itemList',
-        Remove:'&sub'
-      },
-      controller:directiveController,
-      controllerAs:'dctrl',
-      bindToController:true,
-      link:directiveLink
+  //.directive('listDirective',listDirective);
+  .component('componentTrial',{
+    templateUrl:'data.html',
+    controller: componentController,
+    bindings:{
+      ctrl: '=itemList',
+      Remove:'&sub'
     }
-    return ddo;
+  });
+
+  function componentController(){
+    var $ctrl=this;
+    $ctrl.cookiesInList=function(){
+
+      for(var i=0;i<$ctrl.ctrl.items.length;i++){
+
+        var name=$ctrl.ctrl.items[i].name;
+        console.log(name);
+        if(name.toLowerCase().indexOf("cookie")!== -1){
+          console.log("hey");
+          return true;
+        }
+
+      }
+        return false;
+      }
   }
+
+  // function listDirective(){
+  //   var ddo={
+  //
+  //     templateUrl:'data.html',
+  //     scope:{
+  //       ctrl: '=itemList',
+  //       Remove:'&sub'
+  //     },
+  //     controller:directiveController,
+  //     controllerAs:'dctrl',
+  //     bindToController:true,
+  //     link:directiveLink
+  //   }
+  //   return ddo;
+  // }
 
   function directiveLink(scope,element,attrs,controller){
     scope.$watch('dctrl.cookiesInList()',function(newValue,oldValue){
