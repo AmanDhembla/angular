@@ -1,0 +1,6 @@
+<ol>
+<li ng-repeat="item in $ctrl.ctrl.items">{{item.name}} of {{item.quantity}}
+  <button type="button" ng-click="$ctrl.Remove({index: $index});">Add</button>
+</li>
+</ol>
+<div class="a" ng-if="$ctrl.cookiesInList()">WARNING: warning cookies caught</div>
