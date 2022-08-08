@@ -1,12 +1,12 @@
 {
     "info": {
         "_postman_id": "d1a681ef-ace9-4f5d-870c-bd2d34cc041d",
-        "name": "M1",
+        "name": "M234",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
         {
-            "name": "s",
+            "name": "same",
             "id": "3ca76a58-3c7a-445b-8207-48ca2df380ff",
             "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -24,7 +24,7 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                            "raw": "/test",
+                            "raw": "/test/get",
                             "path": [
                                 "test"
                             ]
