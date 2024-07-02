@@ -26,7 +26,7 @@
 													"name": "trigger",
 													"item": [
 														{
-															"name": "**Triggers a new instance of the workflow**",
+															"name": "Triggers a new instance of the workflow",
 															"id": "f28e9908-a0c2-4a6e-a79a-3dcbaea874e7",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
