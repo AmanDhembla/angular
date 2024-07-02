@@ -1,0 +1,4494 @@
+{
+	"info": {
+		"_postman_id": "943e2627-beac-4e49-ab8d-cf0253cfc5e9",
+		"name": "Maestro",
+		"description": "Maestro authors and executes experiences that allow non-coders the ability to define Simple Business Process without having to write code and to deploy them seamlessly without having to have development expertise\n\nContact Support:\n Name: Docusign Developer Center\n Email: devcenter@docusign.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "33554932-943e2627-beac-4e49-ab8d-cf0253cfc5e9"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "accounts",
+					"item": [
+						{
+							"name": "{accountId}",
+							"item": [
+								{
+									"name": "workflow_definitions",
+									"item": [
+										{
+											"name": "{workflowDefinitionId}",
+											"item": [
+												{
+													"name": "trigger",
+													"item": [
+														{
+															"name": "Triggers a new instance of the workflow.",
+															"id": "f28e9908-a0c2-4a6e-a79a-3dcbaea874e7",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"auth": {
+																	"type": "oauth2",
+																	"oauth2": [
+																		{
+																			"key": "scope",
+																			"value": "aow_manage signature",
+																			"type": "string"
+																		},
+																		{
+																			"key": "accessTokenUrl",
+																			"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																			"type": "string"
+																		},
+																		{
+																			"key": "authUrl",
+																			"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																			"type": "string"
+																		},
+																		{
+																			"key": "grant_type",
+																			"value": "authorization_code",
+																			"type": "string"
+																		}
+																	]
+																},
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"instanceName\": \"<string>\",\n  \"metadata\": {},\n  \"participants\": {},\n  \"payload\": {}\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/workflow_definitions/:workflowDefinitionId/trigger?mtid=<uuid>&mtsec=<uuid>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"workflow_definitions",
+																		":workflowDefinitionId",
+																		"trigger"
+																	],
+																	"query": [
+																		{
+																			"key": "mtid",
+																			"value": "<uuid>",
+																			"description": "Managed Token Id registered with Docusign Account Server"
+																		},
+																		{
+																			"key": "mtsec",
+																			"value": "<uuid>",
+																			"description": "Managed Token Secret registered with Docusign account server"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId",
+																			"value": "<uuid>",
+																			"description": "(Required) The account ID."
+																		},
+																		{
+																			"key": "workflowDefinitionId",
+																			"value": "<uuid>",
+																			"description": "(Required) Workflow definition ID."
+																		}
+																	]
+																},
+																"description": "Creates a new workflow instance, triggering the workflow.\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n### Related topics\n\n- [How to trigger a Maestro workflow](/docs/maestro-api/how-to/trigger-workflow/)"
+															},
+															"response": [
+																{
+																	"id": "ba82dcb5-2eca-42b0-aad3-c0476830a3c2",
+																	"name": "Returns a workflow instance trigger URL that can be used to trigger a new instance or return to an instance in progress",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"instanceName\": \"<string>\",\n  \"metadata\": {},\n  \"participants\": {},\n  \"payload\": {}\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/workflow_definitions/:workflowDefinitionId/trigger?mtid=<uuid>&mtsec=<uuid>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"workflow_definitions",
+																				":workflowDefinitionId",
+																				"trigger"
+																			],
+																			"query": [
+																				{
+																					"description": "Managed Token Id registered with Docusign Account Server",
+																					"key": "mtid",
+																					"value": "<uuid>"
+																				},
+																				{
+																					"description": "Managed Token Secret registered with Docusign account server",
+																					"key": "mtsec",
+																					"value": "<uuid>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Created",
+																	"code": 201,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "a1f1b18f-6330-40b2-a31b-18a6033a6368"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"instanceId\": \"<uuid>\",\n  \"workflowInstanceUrl\": \"<uri>\"\n}"
+																},
+																{
+																	"id": "709c64bd-5a33-448b-8279-dae10b4d46d1",
+																	"name": "Bad Request received",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"instanceName\": \"<string>\",\n  \"metadata\": {},\n  \"participants\": {},\n  \"payload\": {}\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/workflow_definitions/:workflowDefinitionId/trigger?mtid=<uuid>&mtsec=<uuid>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"workflow_definitions",
+																				":workflowDefinitionId",
+																				"trigger"
+																			],
+																			"query": [
+																				{
+																					"description": "Managed Token Id registered with Docusign Account Server",
+																					"key": "mtid",
+																					"value": "<uuid>"
+																				},
+																				{
+																					"description": "Managed Token Secret registered with Docusign account server",
+																					"key": "mtsec",
+																					"value": "<uuid>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Bad Request",
+																	"code": 400,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "22823ec5-4d1b-468a-9990-45cbc9dfe818"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "fbfa3c9f-a669-49a8-8100-b1cc0db20f9b",
+																	"name": "Authentication details are invalid",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"instanceName\": \"<string>\",\n  \"metadata\": {},\n  \"participants\": {},\n  \"payload\": {}\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/workflow_definitions/:workflowDefinitionId/trigger?mtid=<uuid>&mtsec=<uuid>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"workflow_definitions",
+																				":workflowDefinitionId",
+																				"trigger"
+																			],
+																			"query": [
+																				{
+																					"description": "Managed Token Id registered with Docusign Account Server",
+																					"key": "mtid",
+																					"value": "<uuid>"
+																				},
+																				{
+																					"description": "Managed Token Secret registered with Docusign account server",
+																					"key": "mtsec",
+																					"value": "<uuid>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Unauthorized",
+																	"code": 401,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "1a309eef-77d2-4efc-828b-cf449e7842c5"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "ce1ca5aa-7c6b-4a79-9443-cafbacd94df1",
+																	"name": "Authorization Denied",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"instanceName\": \"<string>\",\n  \"metadata\": {},\n  \"participants\": {},\n  \"payload\": {}\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/workflow_definitions/:workflowDefinitionId/trigger?mtid=<uuid>&mtsec=<uuid>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"workflow_definitions",
+																				":workflowDefinitionId",
+																				"trigger"
+																			],
+																			"query": [
+																				{
+																					"description": "Managed Token Id registered with Docusign Account Server",
+																					"key": "mtid",
+																					"value": "<uuid>"
+																				},
+																				{
+																					"description": "Managed Token Secret registered with Docusign account server",
+																					"key": "mtsec",
+																					"value": "<uuid>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Forbidden",
+																	"code": 403,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "4fc5016a-1e17-4326-bb97-0935a2bb367c"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "ee31489d-af4b-44d2-99c5-2d692a755548",
+																	"name": "Resource not found when workflow definition id or workflow instance id doesn't exist",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"instanceName\": \"<string>\",\n  \"metadata\": {},\n  \"participants\": {},\n  \"payload\": {}\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/workflow_definitions/:workflowDefinitionId/trigger?mtid=<uuid>&mtsec=<uuid>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"workflow_definitions",
+																				":workflowDefinitionId",
+																				"trigger"
+																			],
+																			"query": [
+																				{
+																					"description": "Managed Token Id registered with Docusign Account Server",
+																					"key": "mtid",
+																					"value": "<uuid>"
+																				},
+																				{
+																					"description": "Managed Token Secret registered with Docusign account server",
+																					"key": "mtsec",
+																					"value": "<uuid>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Not Found",
+																	"code": 404,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "dd5da667-5664-4855-bb4d-e276ced3a347"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "c68ef67d-1729-4be4-adae-2fbfd61b8389",
+																	"name": "Internal server error",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"instanceName\": \"<string>\",\n  \"metadata\": {},\n  \"participants\": {},\n  \"payload\": {}\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/workflow_definitions/:workflowDefinitionId/trigger?mtid=<uuid>&mtsec=<uuid>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"workflow_definitions",
+																				":workflowDefinitionId",
+																				"trigger"
+																			],
+																			"query": [
+																				{
+																					"description": "Managed Token Id registered with Docusign Account Server",
+																					"key": "mtid",
+																					"value": "<uuid>"
+																				},
+																				{
+																					"description": "Managed Token Secret registered with Docusign account server",
+																					"key": "mtsec",
+																					"value": "<uuid>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Internal Server Error",
+																	"code": 500,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "8381338f-5851-4b4c-afad-16f49dece2ef"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																}
+															]
+														}
+													],
+													"id": "b66a272c-9c08-4cc7-b1d3-ec2ec64d8d03"
+												}
+											],
+											"id": "944026a7-6db6-4e65-b66d-7de73cd2bd95"
+										}
+									],
+									"id": "0bb210f1-faaa-4aba-a840-27cb669e5e21"
+								},
+								{
+									"name": "management",
+									"item": [
+										{
+											"name": "instances",
+											"item": [
+												{
+													"name": "{instanceId}",
+													"item": [
+														{
+															"name": "cancel",
+															"item": [
+																{
+																	"name": "Cancels a running workflow instance.",
+																	"id": "1dd445f0-3e4b-4a73-b232-3f1dcb781f2d",
+																	"protocolProfileBehavior": {
+																		"disableBodyPruning": true
+																	},
+																	"request": {
+																		"auth": {
+																			"type": "oauth2",
+																			"oauth2": [
+																				{
+																					"key": "scope",
+																					"value": "aow_manage signature",
+																					"type": "string"
+																				},
+																				{
+																					"key": "accessTokenUrl",
+																					"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																					"type": "string"
+																				},
+																				{
+																					"key": "authUrl",
+																					"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																					"type": "string"
+																				},
+																				{
+																					"key": "grant_type",
+																					"value": "authorization_code",
+																					"type": "string"
+																				}
+																			]
+																		},
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/cancel",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"instances",
+																				":instanceId",
+																				"cancel"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId",
+																					"value": "<uuid>",
+																					"description": "(Required) The account ID."
+																				},
+																				{
+																					"key": "instanceId",
+																					"value": "<uuid>",
+																					"description": "(Required) The instance ID of the workflow to cancel."
+																				}
+																			]
+																		},
+																		"description": "Cancels a running \n[workflow][workflows-concept]\ninstance.\n\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->\n\n### Related topics\n\n- [How to cancel a Maestro workflow instance][howto-cancel]\n\n\n[howto-cancel]:       /docs/maestro-api/how-to/cancel-workflow/\n[workflows-concept]:  /docs/maestro-api/maestro101/workflows/"
+																	},
+																	"response": [
+																		{
+																			"id": "0a0db5be-141b-401f-9737-85f34431b704",
+																			"name": "Return Success",
+																			"originalRequest": {
+																				"method": "POST",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/cancel",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"instances",
+																						":instanceId",
+																						"cancel"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "instanceId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "OK",
+																			"code": 200,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "0ca8de2a-8827-4cf8-8a8b-cae9d650cfbf"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "4f13856d-7471-4d33-b380-c924fed88e3a",
+																			"name": "Authentication details are invalid",
+																			"originalRequest": {
+																				"method": "POST",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/cancel",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"instances",
+																						":instanceId",
+																						"cancel"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "instanceId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Unauthorized",
+																			"code": 401,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "cfd41c49-dcf2-41c8-b02c-dee70edba817"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "fef0212a-871a-4457-b324-768f3ef02f8b",
+																			"name": "The requested resource was not found",
+																			"originalRequest": {
+																				"method": "POST",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/cancel",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"instances",
+																						":instanceId",
+																						"cancel"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "instanceId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Not Found",
+																			"code": 404,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "857e4ea0-08cb-498a-9a5e-79e9e5705a45"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "f0393ebf-0108-4078-ac11-d5179cd1d7b9",
+																			"name": "Internal server error",
+																			"originalRequest": {
+																				"method": "POST",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/cancel",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"instances",
+																						":instanceId",
+																						"cancel"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "instanceId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Internal Server Error",
+																			"code": 500,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "55715c03-0a1d-437f-9748-7158da466d7c"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		}
+																	]
+																}
+															],
+															"id": "a7f1601c-80e4-4174-b5ac-ce939e8c29c3"
+														},
+														{
+															"name": "history",
+															"item": [
+																{
+																	"name": "Gets the step history for a workflow instance.",
+																	"id": "a9f08b29-237b-411c-9e70-1675b4db15af",
+																	"protocolProfileBehavior": {
+																		"disableBodyPruning": true
+																	},
+																	"request": {
+																		"auth": {
+																			"type": "oauth2",
+																			"oauth2": [
+																				{
+																					"key": "scope",
+																					"value": "aow_manage signature",
+																					"type": "string"
+																				},
+																				{
+																					"key": "accessTokenUrl",
+																					"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																					"type": "string"
+																				},
+																				{
+																					"key": "authUrl",
+																					"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																					"type": "string"
+																				},
+																				{
+																					"key": "grant_type",
+																					"value": "authorization_code",
+																					"type": "string"
+																				}
+																			]
+																		},
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/history",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"instances",
+																				":instanceId",
+																				"history"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId",
+																					"value": "<uuid>",
+																					"description": "(Required) The account ID."
+																				},
+																				{
+																					"key": "instanceId",
+																					"value": "<uuid>",
+																					"description": "(Required) Workflow instance ID. <!-- dacid -->\nA string in UUID format: 4a6d6a08-xxxx-xxxx-xxxx-bae4fecc99c8\n"
+																				}
+																			]
+																		},
+																		"description": "Gets the step history for a workflow instance.\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->"
+																	},
+																	"response": [
+																		{
+																			"id": "dba39efb-1b4d-41c1-b452-a196ebbeecf7",
+																			"name": "History of workflow steps is returned",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/history",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"instances",
+																						":instanceId",
+																						"history"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "instanceId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "OK",
+																			"code": 200,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "20e7b314-0ef1-4221-a4df-be87911e1a07"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "[\n  {\n    \"dacId\": \"<uuid>\",\n    \"stepName\": \"<string>\",\n    \"stepState\": \"Failed\",\n    \"userId\": \"<uuid>\",\n    \"accountId\": \"<uuid>\",\n    \"dsStepId\": \"<uuid>\",\n    \"endDate\": \"<dateTime>\",\n    \"error\": {\n      \"code\": \"<string>\",\n      \"endTime\": \"<dateTime>\",\n      \"error\": {\n        \"code\": \"<string>\",\n        \"message\": \"<string>\"\n      },\n      \"name\": \"<string>\",\n      \"startTime\": \"<dateTime>\"\n    },\n    \"outputModuleProperties\": {\n      \"cillum76b\": 72196876.46085805\n    },\n    \"startDate\": \"<dateTime>\",\n    \"stepId\": \"<uuid>\"\n  },\n  {\n    \"dacId\": \"<uuid>\",\n    \"stepName\": \"<string>\",\n    \"stepState\": \"Canceled\",\n    \"userId\": \"<uuid>\",\n    \"accountId\": \"<uuid>\",\n    \"dsStepId\": \"<uuid>\",\n    \"endDate\": \"<dateTime>\",\n    \"error\": {\n      \"code\": \"<string>\",\n      \"endTime\": \"<dateTime>\",\n      \"error\": {\n        \"code\": \"<string>\",\n        \"message\": \"<string>\"\n      },\n      \"name\": \"<string>\",\n      \"startTime\": \"<dateTime>\"\n    },\n    \"outputModuleProperties\": {\n      \"nulla_f\": true,\n      \"Excepteur_895\": false\n    },\n    \"startDate\": \"<dateTime>\",\n    \"stepId\": \"<uuid>\"\n  }\n]"
+																		},
+																		{
+																			"id": "0a1bfd13-7ba4-4c16-8e73-95425fcf6ed7",
+																			"name": "Authentication details are invalid",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/history",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"instances",
+																						":instanceId",
+																						"history"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "instanceId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Unauthorized",
+																			"code": 401,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "260e8739-07cb-4b9c-a098-dc1733b57d78"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "d201a639-ab49-447a-8dd5-80d72eb48706",
+																			"name": "Authorization details are invalid",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/history",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"instances",
+																						":instanceId",
+																						"history"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "instanceId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Forbidden",
+																			"code": 403,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "8762b038-3b9f-454c-bdbe-07f7ca29938d"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "ee796b88-ef05-4093-b610-82c5843e52bd",
+																			"name": "The requested resource was not found",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/history",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"instances",
+																						":instanceId",
+																						"history"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "instanceId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Not Found",
+																			"code": 404,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "dcf2e2c2-b0e1-44fa-9456-cb47d1f1d142"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "730accda-c76a-4924-adbd-803eec83dd72",
+																			"name": "Internal server error",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/instances/:instanceId/history",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"instances",
+																						":instanceId",
+																						"history"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "instanceId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Internal Server Error",
+																			"code": 500,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "a2e97e68-5484-405f-a492-1541b9956012"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		}
+																	]
+																}
+															],
+															"id": "a2fdf2f4-7fa2-40eb-a05c-88ac1e6c9c0d"
+														}
+													],
+													"id": "c82b67fc-2cd1-48ff-8b70-9513d34b3151"
+												}
+											],
+											"id": "7e48ec61-720a-441c-ab45-a267a4133be5"
+										},
+										{
+											"name": "workflow_definitions",
+											"item": [
+												{
+													"name": "{workflowDefinitionId}",
+													"item": [
+														{
+															"name": "config_instances",
+															"item": [
+																{
+																	"name": "Gets a list of configuration instances for a workflow definition",
+																	"id": "640ff2e4-5733-4132-8a1a-4d1ac0390f28",
+																	"protocolProfileBehavior": {
+																		"disableBodyPruning": true
+																	},
+																	"request": {
+																		"auth": {
+																			"type": "oauth2",
+																			"oauth2": [
+																				{
+																					"key": "scope",
+																					"value": "aow_manage signature",
+																					"type": "string"
+																				},
+																				{
+																					"key": "accessTokenUrl",
+																					"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																					"type": "string"
+																				},
+																				{
+																					"key": "authUrl",
+																					"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																					"type": "string"
+																				},
+																				{
+																					"key": "grant_type",
+																					"value": "authorization_code",
+																					"type": "string"
+																				}
+																			]
+																		},
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/config_instances",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId",
+																				"config_instances"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId",
+																					"value": "<uuid>",
+																					"description": "(Required) The account ID."
+																				},
+																				{
+																					"key": "workflowDefinitionId",
+																					"value": "<uuid>",
+																					"description": "(Required) Workflow definition ID."
+																				}
+																			]
+																		},
+																		"description": "Gets a list of configuration instances for a workflow definition\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->"
+																	},
+																	"response": [
+																		{
+																			"id": "0504d278-db13-47be-8486-c13d241fd293",
+																			"name": "Returns a list of configuration instances for a workflow definition",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/config_instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"config_instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "OK",
+																			"code": 200,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "4b850a4c-7d0d-480f-8d93-aee6aa113722"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"configInstances\": [\n    {\n      \"savedValues\": {\n        \"occaecat_6\": \"magna\",\n        \"tempor_a_6\": -50604404,\n        \"Excepteur5\": \"in deserunt dolor quis esse\"\n      },\n      \"stepId\": \"<uuid>\"\n    },\n    {\n      \"savedValues\": {\n        \"occaecat90\": -80050939.7111004,\n        \"esseb\": false\n      },\n      \"stepId\": \"<uuid>\"\n    }\n  ],\n  \"count\": \"<number>\",\n  \"workflowDefinitionId\": \"<uuid>\"\n}"
+																		},
+																		{
+																			"id": "f224c5c4-9f6e-40d2-a444-8eb7623238bb",
+																			"name": "Bad request received",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/config_instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"config_instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Bad Request",
+																			"code": 400,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "763f4d6b-40a5-479e-9651-226e55ad6b2c"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "3b8f76db-f3d4-47b8-a0d5-530a08208ab3",
+																			"name": "Authentication details are invalid",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/config_instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"config_instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Unauthorized",
+																			"code": 401,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "34efaf6e-921b-4d99-88a9-a6b5898800b0"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "c7e86b9f-edd3-47a0-9eb8-53f9373c6ea5",
+																			"name": "Authorization details are invalid",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/config_instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"config_instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Forbidden",
+																			"code": 403,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "c8324a44-c160-43dd-8088-00e2f248bfca"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "2a4437e0-c33c-4dbc-bcdf-3a744602fa80",
+																			"name": "Resource not found",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/config_instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"config_instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Not Found",
+																			"code": 404,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "d3e5e79d-9074-4c76-803e-b8fa0433cd1f"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "e477ad31-52e3-4101-bef6-bb1daf60305e",
+																			"name": "Internal server error",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/config_instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"config_instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Internal Server Error",
+																			"code": 500,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "ad623be5-1215-491e-adaa-1c25cae3859d"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		}
+																	]
+																}
+															],
+															"id": "5172900e-beb8-427b-a9a5-6103eb2caced"
+														},
+														{
+															"name": "instances",
+															"item": [
+																{
+																	"name": "{instanceId}",
+																	"item": [
+																		{
+																			"name": "Gets the details for a specific instance for a deployed workflow definition.",
+																			"id": "b4d807e0-671b-4861-9101-90441b65ae40",
+																			"protocolProfileBehavior": {
+																				"disableBodyPruning": true
+																			},
+																			"request": {
+																				"auth": {
+																					"type": "oauth2",
+																					"oauth2": [
+																						{
+																							"key": "scope",
+																							"value": "aow_manage signature",
+																							"type": "string"
+																						},
+																						{
+																							"key": "accessTokenUrl",
+																							"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																							"type": "string"
+																						},
+																						{
+																							"key": "authUrl",
+																							"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																							"type": "string"
+																						},
+																						{
+																							"key": "grant_type",
+																							"value": "authorization_code",
+																							"type": "string"
+																						}
+																					]
+																				},
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances/:instanceId",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"instances",
+																						":instanceId"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId",
+																							"value": "<uuid>",
+																							"description": "(Required) The account ID."
+																						},
+																						{
+																							"key": "workflowDefinitionId",
+																							"value": "<uuid>",
+																							"description": "(Required) Workflow definition ID."
+																						},
+																						{
+																							"key": "instanceId",
+																							"value": "<uuid>",
+																							"description": "(Required) Workflow instance ID. <!-- dacid -->\nA string in UUID format: 4a6d6a08-xxxx-xxxx-xxxx-bae4fecc99c8\n"
+																						}
+																					]
+																				},
+																				"description": "Gets the details for a specific instance for a deployed workflow definition.\n\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->\n\n\n### Related topics\n\n- [How to get the status of a Maestro workflow instance][howto-status]\n\n[howto-status]: /docs/maestro-api/how-to/get-workflow-status/\n"
+																			},
+																			"response": [
+																				{
+																					"id": "f1d75cbb-edf6-40a0-878b-95a5e893bbcf",
+																					"name": "Details for a specific instance for a workflow definition in the specified account.",
+																					"originalRequest": {
+																						"method": "GET",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "application/json"
+																							},
+																							{
+																								"description": "Added as a part of security scheme: oauth2",
+																								"key": "Authorization",
+																								"value": "<token>"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances/:instanceId",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"v1",
+																								"accounts",
+																								":accountId",
+																								"management",
+																								"workflow_definitions",
+																								":workflowDefinitionId",
+																								"instances",
+																								":instanceId"
+																							],
+																							"variable": [
+																								{
+																									"key": "accountId"
+																								},
+																								{
+																									"key": "workflowDefinitionId"
+																								},
+																								{
+																									"key": "instanceId"
+																								}
+																							]
+																						}
+																					},
+																					"status": "OK",
+																					"code": 200,
+																					"_postman_previewlanguage": "json",
+																					"header": [
+																						{
+																							"key": "Content-Type",
+																							"value": "application/json",
+																							"uuid": "4d896c13-75ae-4601-826d-55a23d272b0f"
+																						}
+																					],
+																					"cookie": [],
+																					"body": "{\n  \"templateId\": \"<uuid>\",\n  \"dacId\": \"<uuid>\",\n  \"creatorId\": \"<uuid>\",\n  \"users\": {\n    \"incbf\": \"<string>\"\n  },\n  \"instanceState\": \"Created\",\n  \"accountId\": \"<uuid>\",\n  \"endDate\": \"<dateTime>\",\n  \"instanceName\": \"<string>\",\n  \"progress\": {\n    \"completedSteps\": \"<number>\",\n    \"currentCompletedStepName\": \"<string>\",\n    \"totalSteps\": \"<number>\"\n  },\n  \"startDate\": \"<dateTime>\",\n  \"startedBy\": {\n    \"startedById\": \"<uuid>\",\n    \"startedByName\": \"<string>\",\n    \"startedByType\": \"OnBehalfOf\"\n  }\n}"
+																				},
+																				{
+																					"id": "37d0bb91-54ee-44c5-84c9-f0013e550a28",
+																					"name": "Authentication details are invalid",
+																					"originalRequest": {
+																						"method": "GET",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "application/json"
+																							},
+																							{
+																								"description": "Added as a part of security scheme: oauth2",
+																								"key": "Authorization",
+																								"value": "<token>"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances/:instanceId",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"v1",
+																								"accounts",
+																								":accountId",
+																								"management",
+																								"workflow_definitions",
+																								":workflowDefinitionId",
+																								"instances",
+																								":instanceId"
+																							],
+																							"variable": [
+																								{
+																									"key": "accountId"
+																								},
+																								{
+																									"key": "workflowDefinitionId"
+																								},
+																								{
+																									"key": "instanceId"
+																								}
+																							]
+																						}
+																					},
+																					"status": "Unauthorized",
+																					"code": 401,
+																					"_postman_previewlanguage": "json",
+																					"header": [
+																						{
+																							"key": "Content-Type",
+																							"value": "application/json",
+																							"uuid": "ac3dec31-b2d6-46cb-bd36-e7d2e2de9129"
+																						}
+																					],
+																					"cookie": [],
+																					"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																				},
+																				{
+																					"id": "53e91eb5-341f-471d-a0a0-2c7d58881e9d",
+																					"name": "Authorization details are invalid",
+																					"originalRequest": {
+																						"method": "GET",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "application/json"
+																							},
+																							{
+																								"description": "Added as a part of security scheme: oauth2",
+																								"key": "Authorization",
+																								"value": "<token>"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances/:instanceId",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"v1",
+																								"accounts",
+																								":accountId",
+																								"management",
+																								"workflow_definitions",
+																								":workflowDefinitionId",
+																								"instances",
+																								":instanceId"
+																							],
+																							"variable": [
+																								{
+																									"key": "accountId"
+																								},
+																								{
+																									"key": "workflowDefinitionId"
+																								},
+																								{
+																									"key": "instanceId"
+																								}
+																							]
+																						}
+																					},
+																					"status": "Forbidden",
+																					"code": 403,
+																					"_postman_previewlanguage": "json",
+																					"header": [
+																						{
+																							"key": "Content-Type",
+																							"value": "application/json",
+																							"uuid": "defb3b80-61a3-44bd-8ded-829cd0e05d6b"
+																						}
+																					],
+																					"cookie": [],
+																					"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																				},
+																				{
+																					"id": "a2cefc5d-22d7-40e1-b5ea-21fda4b5fe92",
+																					"name": "The requested resource was not found",
+																					"originalRequest": {
+																						"method": "GET",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "application/json"
+																							},
+																							{
+																								"description": "Added as a part of security scheme: oauth2",
+																								"key": "Authorization",
+																								"value": "<token>"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances/:instanceId",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"v1",
+																								"accounts",
+																								":accountId",
+																								"management",
+																								"workflow_definitions",
+																								":workflowDefinitionId",
+																								"instances",
+																								":instanceId"
+																							],
+																							"variable": [
+																								{
+																									"key": "accountId"
+																								},
+																								{
+																									"key": "workflowDefinitionId"
+																								},
+																								{
+																									"key": "instanceId"
+																								}
+																							]
+																						}
+																					},
+																					"status": "Not Found",
+																					"code": 404,
+																					"_postman_previewlanguage": "json",
+																					"header": [
+																						{
+																							"key": "Content-Type",
+																							"value": "application/json",
+																							"uuid": "d6b4f5c5-2b76-4f7a-907d-26a180f3ace9"
+																						}
+																					],
+																					"cookie": [],
+																					"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																				},
+																				{
+																					"id": "f950d200-beaf-4a2a-8b61-a4c8811ef175",
+																					"name": "Internal server error",
+																					"originalRequest": {
+																						"method": "GET",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "application/json"
+																							},
+																							{
+																								"description": "Added as a part of security scheme: oauth2",
+																								"key": "Authorization",
+																								"value": "<token>"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances/:instanceId",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"v1",
+																								"accounts",
+																								":accountId",
+																								"management",
+																								"workflow_definitions",
+																								":workflowDefinitionId",
+																								"instances",
+																								":instanceId"
+																							],
+																							"variable": [
+																								{
+																									"key": "accountId"
+																								},
+																								{
+																									"key": "workflowDefinitionId"
+																								},
+																								{
+																									"key": "instanceId"
+																								}
+																							]
+																						}
+																					},
+																					"status": "Internal Server Error",
+																					"code": 500,
+																					"_postman_previewlanguage": "json",
+																					"header": [
+																						{
+																							"key": "Content-Type",
+																							"value": "application/json",
+																							"uuid": "6064d8ed-0b38-4060-b49d-0dd05decfdd8"
+																						}
+																					],
+																					"cookie": [],
+																					"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																				}
+																			]
+																		}
+																	],
+																	"id": "49b0a735-b6ff-4b88-8c19-b2757956d991"
+																},
+																{
+																	"name": "Get a list of instances of a deployed workflow definition.",
+																	"id": "c4416f07-e66a-4de0-99c1-9c2e3c3282cb",
+																	"protocolProfileBehavior": {
+																		"disableBodyPruning": true
+																	},
+																	"request": {
+																		"auth": {
+																			"type": "oauth2",
+																			"oauth2": [
+																				{
+																					"key": "scope",
+																					"value": "aow_manage signature",
+																					"type": "string"
+																				},
+																				{
+																					"key": "accessTokenUrl",
+																					"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																					"type": "string"
+																				},
+																				{
+																					"key": "authUrl",
+																					"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																					"type": "string"
+																				},
+																				{
+																					"key": "grant_type",
+																					"value": "authorization_code",
+																					"type": "string"
+																				}
+																			]
+																		},
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId",
+																				"instances"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId",
+																					"value": "<uuid>",
+																					"description": "(Required) The account ID."
+																				},
+																				{
+																					"key": "workflowDefinitionId",
+																					"value": "<uuid>",
+																					"description": "(Required) The ID of the workflow definition to delete."
+																				}
+																			]
+																		},
+																		"description": "Get a list of instances of a deployed workflow definition.\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->\n\nA successful response is an array of \n[`WorkflowInstance`](/docs/maestro-api/reference/workflowinstancemanagement/workflowinstancemanagement/getworkflowinstance/#schema_200_workflowinstance_workflowinstance)\nobjects.\n"
+																	},
+																	"response": [
+																		{
+																			"id": "e6656dbc-0741-440f-9845-49327a275b79",
+																			"name": "A list of workflow instances for a workflow definition in the specified account.",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "OK",
+																			"code": 200,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "f6c395ae-d5c6-47c5-9d2d-ac1966c053b5"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "[\n  {\n    \"templateId\": \"<uuid>\",\n    \"dacId\": \"<uuid>\",\n    \"creatorId\": \"<uuid>\",\n    \"users\": {\n      \"Excepteur5\": \"<string>\",\n      \"occaecat_1d6\": \"<string>\",\n      \"incididunt599\": \"<string>\"\n    },\n    \"instanceState\": \"Completed\",\n    \"accountId\": \"<uuid>\",\n    \"endDate\": \"<dateTime>\",\n    \"instanceName\": \"<string>\",\n    \"progress\": {\n      \"completedSteps\": \"<number>\",\n      \"currentCompletedStepName\": \"<string>\",\n      \"totalSteps\": \"<number>\"\n    },\n    \"startDate\": \"<dateTime>\",\n    \"startedBy\": {\n      \"startedById\": \"<uuid>\",\n      \"startedByName\": \"<string>\",\n      \"startedByType\": \"Participant\"\n    }\n  },\n  {\n    \"templateId\": \"<uuid>\",\n    \"dacId\": \"<uuid>\",\n    \"creatorId\": \"<uuid>\",\n    \"users\": {\n      \"veniameb2\": \"<string>\"\n    },\n    \"instanceState\": \"Canceled\",\n    \"accountId\": \"<uuid>\",\n    \"endDate\": \"<dateTime>\",\n    \"instanceName\": \"<string>\",\n    \"progress\": {\n      \"completedSteps\": \"<number>\",\n      \"currentCompletedStepName\": \"<string>\",\n      \"totalSteps\": \"<number>\"\n    },\n    \"startDate\": \"<dateTime>\",\n    \"startedBy\": {\n      \"startedById\": \"<uuid>\",\n      \"startedByName\": \"<string>\",\n      \"startedByType\": \"Preparer\"\n    }\n  }\n]"
+																		},
+																		{
+																			"id": "cfdf8e6e-d41b-48c6-be03-6b0d99bb41f1",
+																			"name": "Authentication details are invalid",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Unauthorized",
+																			"code": 401,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "1473854e-4b94-4435-a07e-6f7831342c18"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "167a6dd1-66f5-41f3-88fa-f512d8fa03b4",
+																			"name": "Authorization details are invalid",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Forbidden",
+																			"code": 403,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "84f38b49-9ebf-4b8e-8be0-c623cfc13a29"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "696691e5-158f-42cf-8982-2ce7775ac23b",
+																			"name": "The requested resource was not found",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Not Found",
+																			"code": 404,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "3390b89f-14ef-42dc-aac0-5f40e9fd1711"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "deaeb518-31a3-408c-b198-437e891ac361",
+																			"name": "Internal server error",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/instances",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"instances"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Internal Server Error",
+																			"code": 500,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "9b4c32d0-84c0-4730-91c5-c2ff1a49c78e"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		}
+																	]
+																}
+															],
+															"id": "2ee514f6-2a6b-4837-b758-240c69b11b94"
+														},
+														{
+															"name": "publish",
+															"item": [
+																{
+																	"name": "Publishes or unpublishes a workflow definition.",
+																	"id": "c177e495-ee2d-4926-8a43-fc8d5ea63c30",
+																	"protocolProfileBehavior": {
+																		"disableBodyPruning": true
+																	},
+																	"request": {
+																		"auth": {
+																			"type": "oauth2",
+																			"oauth2": [
+																				{
+																					"key": "scope",
+																					"value": "aow_manage signature",
+																					"type": "string"
+																				},
+																				{
+																					"key": "accessTokenUrl",
+																					"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																					"type": "string"
+																				},
+																				{
+																					"key": "authUrl",
+																					"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																					"type": "string"
+																				},
+																				{
+																					"key": "grant_type",
+																					"value": "authorization_code",
+																					"type": "string"
+																				}
+																			]
+																		},
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"deploymentStatus\": \"Publish\"\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/publish",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId",
+																				"publish"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId",
+																					"value": "<uuid>",
+																					"description": "(Required) The account ID."
+																				},
+																				{
+																					"key": "workflowDefinitionId",
+																					"value": "<uuid>",
+																					"description": "(Required) Workflow definition ID."
+																				}
+																			]
+																		},
+																		"description": "Publishes or unpublishes a workflow definition.\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->"
+																	},
+																	"response": [
+																		{
+																			"id": "48b01bf5-2b3c-41a7-ad25-ca1db436fe12",
+																			"name": "Return Success",
+																			"originalRequest": {
+																				"method": "POST",
+																				"header": [
+																					{
+																						"key": "Content-Type",
+																						"value": "application/json"
+																					},
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"body": {
+																					"mode": "raw",
+																					"raw": "{\n  \"deploymentStatus\": \"Publish\"\n}",
+																					"options": {
+																						"raw": {
+																							"headerFamily": "json",
+																							"language": "json"
+																						}
+																					}
+																				},
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/publish",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"publish"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "OK",
+																			"code": 200,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "fe6bd495-8ba3-47d3-afd7-8714fdd5e364"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"message\": \"<string>\",\n  \"pollUrl\": \"<uri>\",\n  \"method\": \"<string>\",\n  \"receivedTime\": \"<dateTime>\"\n}"
+																		},
+																		{
+																			"id": "c86ecdf1-1fae-4d53-9830-ede458285909",
+																			"name": "Workflow Definition is invalid",
+																			"originalRequest": {
+																				"method": "POST",
+																				"header": [
+																					{
+																						"key": "Content-Type",
+																						"value": "application/json"
+																					},
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"body": {
+																					"mode": "raw",
+																					"raw": "{\n  \"deploymentStatus\": \"Publish\"\n}",
+																					"options": {
+																						"raw": {
+																							"headerFamily": "json",
+																							"language": "json"
+																						}
+																					}
+																				},
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/publish",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"publish"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Bad Request",
+																			"code": 400,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "6579e816-8da8-42b8-aa4b-e8b6f2c37772"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"message\": \"<string>\",\n  \"validationErrors\": [\n    {\n      \"message\": \"<string>\",\n      \"code\": \"<string>\"\n    },\n    {\n      \"message\": \"<string>\",\n      \"code\": \"<string>\"\n    }\n  ]\n}"
+																		},
+																		{
+																			"id": "2d7ed0dc-99a3-4cee-9ff8-c9419eba4386",
+																			"name": "Authentication details are invalid",
+																			"originalRequest": {
+																				"method": "POST",
+																				"header": [
+																					{
+																						"key": "Content-Type",
+																						"value": "application/json"
+																					},
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"body": {
+																					"mode": "raw",
+																					"raw": "{\n  \"deploymentStatus\": \"Publish\"\n}",
+																					"options": {
+																						"raw": {
+																							"headerFamily": "json",
+																							"language": "json"
+																						}
+																					}
+																				},
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/publish",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"publish"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Unauthorized",
+																			"code": 401,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "e27df0b4-8c25-4242-a9ff-d3841811db60"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "1e749925-27f3-476d-82cd-6c9fd8b9e392",
+																			"name": "The requested resource was not found",
+																			"originalRequest": {
+																				"method": "POST",
+																				"header": [
+																					{
+																						"key": "Content-Type",
+																						"value": "application/json"
+																					},
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"body": {
+																					"mode": "raw",
+																					"raw": "{\n  \"deploymentStatus\": \"Publish\"\n}",
+																					"options": {
+																						"raw": {
+																							"headerFamily": "json",
+																							"language": "json"
+																						}
+																					}
+																				},
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/publish",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"publish"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Not Found",
+																			"code": 404,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "34535cdb-7db0-47b6-b5c2-d1d7685a1cc1"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		},
+																		{
+																			"id": "1d36a8d1-c2c1-4a46-94cd-6ffc2f45e16c",
+																			"name": "Internal server error",
+																			"originalRequest": {
+																				"method": "POST",
+																				"header": [
+																					{
+																						"key": "Content-Type",
+																						"value": "application/json"
+																					},
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"description": "Added as a part of security scheme: oauth2",
+																						"key": "Authorization",
+																						"value": "<token>"
+																					}
+																				],
+																				"body": {
+																					"mode": "raw",
+																					"raw": "{\n  \"deploymentStatus\": \"Publish\"\n}",
+																					"options": {
+																						"raw": {
+																							"headerFamily": "json",
+																							"language": "json"
+																						}
+																					}
+																				},
+																				"url": {
+																					"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId/publish",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"v1",
+																						"accounts",
+																						":accountId",
+																						"management",
+																						"workflow_definitions",
+																						":workflowDefinitionId",
+																						"publish"
+																					],
+																					"variable": [
+																						{
+																							"key": "accountId"
+																						},
+																						{
+																							"key": "workflowDefinitionId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Internal Server Error",
+																			"code": 500,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json",
+																					"uuid": "0d6e4b4b-0c00-4c5d-af13-c5221918ac09"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																		}
+																	]
+																}
+															],
+															"id": "ee1749c0-86c6-419e-97d8-66fae59e1356"
+														},
+														{
+															"name": "Deletes a workflow definition.",
+															"id": "e7c23010-08e2-4582-81b8-dae9e846c933",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"auth": {
+																	"type": "oauth2",
+																	"oauth2": [
+																		{
+																			"key": "scope",
+																			"value": "aow_manage signature",
+																			"type": "string"
+																		},
+																		{
+																			"key": "accessTokenUrl",
+																			"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																			"type": "string"
+																		},
+																		{
+																			"key": "authUrl",
+																			"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																			"type": "string"
+																		},
+																		{
+																			"key": "grant_type",
+																			"value": "authorization_code",
+																			"type": "string"
+																		}
+																	]
+																},
+																"method": "DELETE",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions",
+																		":workflowDefinitionId"
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId",
+																			"value": "<uuid>",
+																			"description": "(Required) The account ID."
+																		},
+																		{
+																			"key": "workflowDefinitionId",
+																			"value": "<uuid>",
+																			"description": "(Required) The ID of the workflow definition to delete."
+																		}
+																	]
+																},
+																"description": "Deletes a workflow definition.\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->"
+															},
+															"response": [
+																{
+																	"id": "7fefae77-6a65-4332-9919-3b66cf4c8f15",
+																	"name": "Returns Delete Successful.",
+																	"originalRequest": {
+																		"method": "DELETE",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "47ebf686-16f1-417e-b6b8-c0d66e8cba93"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"workflowDefinitionId\": \"<uuid>\",\n  \"pollUrl\": \"<uri>\"\n}"
+																},
+																{
+																	"id": "514cea9b-b9c7-420f-9f9c-72a943e56931",
+																	"name": "Resource not found",
+																	"originalRequest": {
+																		"method": "DELETE",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Not Found",
+																	"code": 404,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "67860416-cab2-4243-8bde-5c323c7ed426"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "b49bd5e9-3589-4c3a-a425-2585ec1a2de5",
+																	"name": "Internal server error",
+																	"originalRequest": {
+																		"method": "DELETE",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Internal Server Error",
+																	"code": 500,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "37f603d8-6927-4fa0-bd59-4beaf21177b1"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																}
+															]
+														},
+														{
+															"name": "Gets a workflow definition.",
+															"id": "95641c3f-0d29-406f-83a3-2c9258e371f4",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"auth": {
+																	"type": "oauth2",
+																	"oauth2": [
+																		{
+																			"key": "scope",
+																			"value": "aow_manage signature",
+																			"type": "string"
+																		},
+																		{
+																			"key": "accessTokenUrl",
+																			"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																			"type": "string"
+																		},
+																		{
+																			"key": "authUrl",
+																			"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																			"type": "string"
+																		},
+																		{
+																			"key": "grant_type",
+																			"value": "authorization_code",
+																			"type": "string"
+																		}
+																	]
+																},
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId?lastDeployedId=<string>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions",
+																		":workflowDefinitionId"
+																	],
+																	"query": [
+																		{
+																			"key": "lastDeployedId",
+																			"value": "<string>",
+																			"description": "The ID of the deployed workflow definition."
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId",
+																			"value": "<uuid>",
+																			"description": "(Required) The account ID."
+																		},
+																		{
+																			"key": "workflowDefinitionId",
+																			"value": "<uuid>",
+																			"description": "(Required) Workflow definition ID."
+																		}
+																	]
+																},
+																"description": "Returns a workflow definition.\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->\n\n### Related topics\n\n- [How to trigger a Maestro workflow][howto-trigger]\n\n[howto-trigger]:      /docs/maestro-api/how-to/trigger-workflow/\n\n"
+															},
+															"response": [
+																{
+																	"id": "8ea8ce61-f4ce-4241-8fb7-b9ac2d9f2558",
+																	"name": "Returns a workflow definition.",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId?lastDeployedId=<string>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"query": [
+																				{
+																					"description": "The ID of the deployed workflow definition.",
+																					"key": "lastDeployedId",
+																					"value": "<string>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "8f3e6d85-f405-42dd-904d-87ad5f1233df"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"id\": \"<uuid>\",\n  \"accountId\": \"<uuid>\",\n  \"createdDate\": \"<dateTime>\",\n  \"isDraft\": \"<boolean>\",\n  \"lastDeployedId\": \"<string>\",\n  \"lastDeployedVersion\": \"<string>\",\n  \"lastDeployedWorkflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Delete\",\n      \"input\": {\n        \"cillum_d83\": {},\n        \"anim_55d\": {}\n      },\n      \"output\": {\n        \"aliquip19\": {},\n        \"laboris84\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"enim_2_3\": {},\n      \"in_d9\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"mollit_2\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  },\n  \"lastUpdatedDate\": \"<dateTime>\",\n  \"status\": \"publishing\",\n  \"triggerUrl\": \"<uri>\",\n  \"validationErrors\": [\n    {\n      \"message\": \"<string>\",\n      \"code\": \"<string>\"\n    },\n    {\n      \"message\": \"<string>\",\n      \"code\": \"<string>\"\n    }\n  ],\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Put\",\n      \"input\": {\n        \"tempor_c\": {},\n        \"ipsum1\": {},\n        \"quied\": {},\n        \"aliquip1\": {}\n      },\n      \"output\": {\n        \"adipisicing_1d2\": {},\n        \"commodo_\": {},\n        \"sedf8\": {}\n      },\n      \"eventType\": \"envelope-deleted\"\n    },\n    \"variables\": {\n      \"do7\": {},\n      \"dolor9\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"cillumd\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      },\n      \"Duisa\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}"
+																},
+																{
+																	"id": "dc96c16f-5655-4cca-8bdc-b79d1760d066",
+																	"name": "Bad Request received",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId?lastDeployedId=<string>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"query": [
+																				{
+																					"description": "The ID of the deployed workflow definition.",
+																					"key": "lastDeployedId",
+																					"value": "<string>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Bad Request",
+																	"code": 400,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "24102281-5f75-4646-badb-d689d5b7b34b"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "cf0373d4-2fff-4e9a-add5-820fbf370ed2",
+																	"name": "Authentication details are invalid",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId?lastDeployedId=<string>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"query": [
+																				{
+																					"description": "The ID of the deployed workflow definition.",
+																					"key": "lastDeployedId",
+																					"value": "<string>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Unauthorized",
+																	"code": 401,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "48ef01b7-80b5-409e-a9db-fc27d3df8048"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "c549b272-9886-408c-ae8a-4eb44be3dd31",
+																	"name": "Authorization details are invalid",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId?lastDeployedId=<string>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"query": [
+																				{
+																					"description": "The ID of the deployed workflow definition.",
+																					"key": "lastDeployedId",
+																					"value": "<string>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Forbidden",
+																	"code": 403,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "a158d696-a8dd-4416-8ac0-85ba663c9420"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "81401a41-dd8b-4033-abd2-4a273f15e95f",
+																	"name": "Internal server error",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId?lastDeployedId=<string>",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"query": [
+																				{
+																					"description": "The ID of the deployed workflow definition.",
+																					"key": "lastDeployedId",
+																					"value": "<string>"
+																				}
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Internal Server Error",
+																	"code": 500,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "a554733d-c2b4-475f-b100-dfdd1eb12722"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																}
+															]
+														},
+														{
+															"name": "Updates a workflow definition.",
+															"id": "b2ece2e2-7ca6-4151-b6d9-1679e61b61e5",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"auth": {
+																	"type": "oauth2",
+																	"oauth2": [
+																		{
+																			"key": "scope",
+																			"value": "aow_manage signature",
+																			"type": "string"
+																		},
+																		{
+																			"key": "accessTokenUrl",
+																			"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																			"type": "string"
+																		},
+																		{
+																			"key": "authUrl",
+																			"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																			"type": "string"
+																		},
+																		{
+																			"key": "grant_type",
+																			"value": "authorization_code",
+																			"type": "string"
+																		}
+																	]
+																},
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions",
+																		":workflowDefinitionId"
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId",
+																			"value": "<uuid>",
+																			"description": "(Required) The account ID."
+																		},
+																		{
+																			"key": "workflowDefinitionId",
+																			"value": "<uuid>",
+																			"description": "(Required) Workflow definition ID."
+																		}
+																	]
+																},
+																"description": "Updates a workflow definition.\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->\n\nA Maestro workflow is an object that represents your end-to-end agreement workflow, including all pre and post-signing steps. You can add and order steps as necessary for your workflow and add conditional logic to create branches within that workflow.\n\nTo learn the basics of workflows and to see an example workflow definition,\nsee [Workflows](/docs/maestro-api/maestro101/workflows/) in\nthe Maestro API concepts guide.\n\n"
+															},
+															"response": [
+																{
+																	"id": "933defe9-1d23-4d62-88e9-1d9fb0f89a07",
+																	"name": "Return Success",
+																	"originalRequest": {
+																		"method": "PUT",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "01201faf-ac05-44a7-9cb6-aac9cd4efb06"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"workflowDefinitionId\": \"<uuid>\",\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http\",\n      \"httpType\": \"Delete\",\n      \"input\": {\n        \"Ute\": {}\n      },\n      \"output\": {\n        \"labore_a\": {},\n        \"nullaba\": {}\n      },\n      \"eventType\": \"Authentication Failed\"\n    },\n    \"variables\": {\n      \"in_42a\": {}\n    },\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"occaecat_b\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  },\n  \"isValidWorkflowDefinition\": \"<boolean>\",\n  \"validationErrors\": [\n    {\n      \"message\": \"<string>\",\n      \"code\": \"<string>\"\n    },\n    {\n      \"message\": \"<string>\",\n      \"code\": \"<string>\"\n    }\n  ]\n}"
+																},
+																{
+																	"id": "9bde1a88-a7b6-4e31-b3d6-4ba0bed4abe3",
+																	"name": "Bad request, malformed input",
+																	"originalRequest": {
+																		"method": "PUT",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Bad Request",
+																	"code": 400,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "a37ffd4a-405d-4819-bf8a-541b1a6233bf"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "48df431f-422e-4b80-9179-89c5a7048b5a",
+																	"name": "Authentication details are invalid",
+																	"originalRequest": {
+																		"method": "PUT",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Unauthorized",
+																	"code": 401,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "aea8975c-9ed8-475f-baea-8e481a84885c"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "a5850b92-e277-4809-87e2-8f2a54a16819",
+																	"name": "The requested resource was not found",
+																	"originalRequest": {
+																		"method": "PUT",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Not Found",
+																	"code": 404,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "c56888d1-8b02-460e-a3c3-728bce141b04"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																},
+																{
+																	"id": "6ba52073-83f3-467c-ad87-4afebd88ef75",
+																	"name": "Internal server error",
+																	"originalRequest": {
+																		"method": "PUT",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: oauth2",
+																				"key": "Authorization",
+																				"value": "<token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions/:workflowDefinitionId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"v1",
+																				"accounts",
+																				":accountId",
+																				"management",
+																				"workflow_definitions",
+																				":workflowDefinitionId"
+																			],
+																			"variable": [
+																				{
+																					"key": "accountId"
+																				},
+																				{
+																					"key": "workflowDefinitionId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Internal Server Error",
+																	"code": 500,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json",
+																			"uuid": "80019b2b-5b1c-46b1-b7c8-39b5f22f42ad"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+																}
+															]
+														}
+													],
+													"id": "6a6a4b17-b86a-4c5c-8383-fa41d23d2e37"
+												},
+												{
+													"name": "Gets a list of  workflow definition metadata.",
+													"id": "7a9def8d-bd22-4ddf-b177-b5bf1f9e8316",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "oauth2",
+															"oauth2": [
+																{
+																	"key": "scope",
+																	"value": "aow_manage signature",
+																	"type": "string"
+																},
+																{
+																	"key": "accessTokenUrl",
+																	"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																	"type": "string"
+																},
+																{
+																	"key": "authUrl",
+																	"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																	"type": "string"
+																},
+																{
+																	"key": "grant_type",
+																	"value": "authorization_code",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions?status=archived",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"v1",
+																"accounts",
+																":accountId",
+																"management",
+																"workflow_definitions"
+															],
+															"query": [
+																{
+																	"key": "status",
+																	"value": "archived",
+																	"description": "Workflow definition metadata status. <!-- filter -->"
+																}
+															],
+															"variable": [
+																{
+																	"key": "accountId",
+																	"value": "<uuid>",
+																	"description": "(Required) The account ID."
+																}
+															]
+														},
+														"description": "Gets a list of  workflow definition metadata.\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->"
+													},
+													"response": [
+														{
+															"id": "4c985ab0-31cb-4bb4-a612-18c064a7d034",
+															"name": "Returns a list of workflow definitions' metadata.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: oauth2",
+																		"key": "Authorization",
+																		"value": "<token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions?status=archived",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions"
+																	],
+																	"query": [
+																		{
+																			"description": "Workflow definition metadata status. <!-- filter -->",
+																			"key": "status",
+																			"value": "archived"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json",
+																	"uuid": "ac3130d7-cd06-4bf7-b5cb-20f21e6e72b0"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"count\": \"<number>\",\n  \"value\": [\n    {\n      \"id\": \"<uuid>\",\n      \"accountId\": \"<uuid>\",\n      \"createdDate\": \"<dateTime>\",\n      \"isDraft\": \"<boolean>\",\n      \"lastDeployedId\": \"<string>\",\n      \"lastDeployedVersion\": \"<string>\",\n      \"lastUpdatedDate\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"status\": \"unpublishing\",\n      \"triggerUrl\": \"<uri>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"accountId\": \"<uuid>\",\n      \"createdDate\": \"<dateTime>\",\n      \"isDraft\": \"<boolean>\",\n      \"lastDeployedId\": \"<string>\",\n      \"lastDeployedVersion\": \"<string>\",\n      \"lastUpdatedDate\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"status\": \"inactive\",\n      \"triggerUrl\": \"<uri>\"\n    }\n  ]\n}"
+														},
+														{
+															"id": "e2786b44-af24-4136-8fb6-503acf0cb49c",
+															"name": "Bad Request received",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: oauth2",
+																		"key": "Authorization",
+																		"value": "<token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions?status=archived",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions"
+																	],
+																	"query": [
+																		{
+																			"description": "Workflow definition metadata status. <!-- filter -->",
+																			"key": "status",
+																			"value": "archived"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId"
+																		}
+																	]
+																}
+															},
+															"status": "Bad Request",
+															"code": 400,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json",
+																	"uuid": "45754813-822e-4324-bd76-7eb285c0a433"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+														},
+														{
+															"id": "de767528-d8a7-4a5a-b397-7fca9d8c60db",
+															"name": "Authentication details are invalid",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: oauth2",
+																		"key": "Authorization",
+																		"value": "<token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions?status=archived",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions"
+																	],
+																	"query": [
+																		{
+																			"description": "Workflow definition metadata status. <!-- filter -->",
+																			"key": "status",
+																			"value": "archived"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId"
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json",
+																	"uuid": "ce3b447b-666e-4515-8e08-b0aff3bcf67b"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+														},
+														{
+															"id": "6b9f044d-b9be-443e-9f1a-56c534e3fa87",
+															"name": "Authorization details are invalid",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: oauth2",
+																		"key": "Authorization",
+																		"value": "<token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions?status=archived",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions"
+																	],
+																	"query": [
+																		{
+																			"description": "Workflow definition metadata status. <!-- filter -->",
+																			"key": "status",
+																			"value": "archived"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId"
+																		}
+																	]
+																}
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json",
+																	"uuid": "498a7128-9f53-4d84-b54d-8fd12714628b"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+														},
+														{
+															"id": "ec6dd12e-8af1-473e-94da-78ba92914909",
+															"name": "Internal server error",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: oauth2",
+																		"key": "Authorization",
+																		"value": "<token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions?status=archived",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions"
+																	],
+																	"query": [
+																		{
+																			"description": "Workflow definition metadata status. <!-- filter -->",
+																			"key": "status",
+																			"value": "archived"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId"
+																		}
+																	]
+																}
+															},
+															"status": "Internal Server Error",
+															"code": 500,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json",
+																	"uuid": "32ff6968-02c0-4834-9689-da9c37b3fbb0"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Creates a workflow definition.",
+													"id": "6007bfbe-bb72-44c5-8df8-7f106078a250",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "oauth2",
+															"oauth2": [
+																{
+																	"key": "scope",
+																	"value": "aow_manage signature",
+																	"type": "string"
+																},
+																{
+																	"key": "accessTokenUrl",
+																	"value": "https://account-tk1.tk.docusign.dev/oauth/token",
+																	"type": "string"
+																},
+																{
+																	"key": "authUrl",
+																	"value": "https://account-tk1.tk.docusign.dev/oauth/auth",
+																	"type": "string"
+																},
+																{
+																	"key": "grant_type",
+																	"value": "authorization_code",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"v1",
+																"accounts",
+																":accountId",
+																"management",
+																"workflow_definitions"
+															],
+															"variable": [
+																{
+																	"key": "accountId",
+																	"value": "<uuid>",
+																	"description": "(Required) The account ID."
+																}
+															]
+														},
+														"description": "Creates a workflow definition. In general, it is much easier to create a workflow through the web interface.\n\n<!-- maestro beta notice -->\n\n<ds-inlinemessage>\n  The Maestro API is currently only available\n  as part of a beta program.\n  See <a href=\"/docs/maestro-api/get-access/\">Get access to Maestro API</a>\n  for details.\n</ds-inlinemessage>\n\n<!-- end maestro beta notice -->\n\nA Maestro workflow is an object that represents your end-to-end agreement workflow, including all pre and post-signing steps. You can add and order steps as necessary for your workflow and add conditional logic to create branches within that workflow. \n\nTo learn the basics of workflows and to see an example workflow definition,\nsee [Workflows](/docs/maestro-api/maestro101/workflows/) in\nthe Maestro API concepts guide.\n\n"
+													},
+													"response": [
+														{
+															"id": "40d41311-1b24-4ccc-bb0f-e2c13f533346",
+															"name": "Return Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: oauth2",
+																		"key": "Authorization",
+																		"value": "<token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions"
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json",
+																	"uuid": "a31c000f-6b7d-459e-8567-a62d54a15aff"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"workflowDefinitionId\": \"<uuid>\",\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http\",\n      \"httpType\": \"Delete\",\n      \"input\": {\n        \"Ute\": {}\n      },\n      \"output\": {\n        \"labore_a\": {},\n        \"nullaba\": {}\n      },\n      \"eventType\": \"Authentication Failed\"\n    },\n    \"variables\": {\n      \"in_42a\": {}\n    },\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"occaecat_b\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  },\n  \"isValidWorkflowDefinition\": \"<boolean>\",\n  \"validationErrors\": [\n    {\n      \"message\": \"<string>\",\n      \"code\": \"<string>\"\n    },\n    {\n      \"message\": \"<string>\",\n      \"code\": \"<string>\"\n    }\n  ]\n}"
+														},
+														{
+															"id": "25f8aa31-4603-41eb-9b4c-74857c849e40",
+															"name": "Authentication details are invalid",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: oauth2",
+																		"key": "Authorization",
+																		"value": "<token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions"
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId"
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json",
+																	"uuid": "01ccd935-5355-426a-ad33-25778d428cc7"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+														},
+														{
+															"id": "527f8e81-dd5b-4f64-a72c-77f2cec95217",
+															"name": "The requested resource was not found",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: oauth2",
+																		"key": "Authorization",
+																		"value": "<token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions"
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId"
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json",
+																	"uuid": "028882fc-48a5-4510-9b41-170201e6ce28"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+														},
+														{
+															"id": "677d2fa9-af17-4176-8c98-f9dfb639f1bc",
+															"name": "Internal server error",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: oauth2",
+																		"key": "Authorization",
+																		"value": "<token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"workflowDefinition\": {\n    \"workflowName\": \"<string>\",\n    \"workflowDescription\": \"<string>\",\n    \"documentVersion\": \"<string>\",\n    \"schemaVersion\": \"<string>\",\n    \"accountId\": \"<uuid>\",\n    \"trigger\": {\n      \"name\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"type\": \"Http-API\",\n      \"httpType\": \"Get\",\n      \"input\": {\n        \"dolor8c\": {}\n      },\n      \"output\": {\n        \"cillum_cc\": {},\n        \"mollit_3_f\": {},\n        \"pariature\": {}\n      },\n      \"eventType\": \"envelope-created\"\n    },\n    \"variables\": {\n      \"esse__d\": {},\n      \"aliquip485\": {}\n    },\n    \"steps\": [],\n    \"createdByName\": \"<string>\",\n    \"participants\": {\n      \"deserunt_ed\": {\n        \"participantRole\": \"<string>\",\n        \"participantEmail\": \"<uuid>\",\n        \"participantFirstName\": \"<uuid>\",\n        \"participantLastName\": \"<uuid>\"\n      }\n    }\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/v1/accounts/:accountId/management/workflow_definitions",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"v1",
+																		"accounts",
+																		":accountId",
+																		"management",
+																		"workflow_definitions"
+																	],
+																	"variable": [
+																		{
+																			"key": "accountId"
+																		}
+																	]
+																}
+															},
+															"status": "Internal Server Error",
+															"code": 500,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json",
+																	"uuid": "5e3f68e6-114a-4da6-acb7-030d9f911310"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"errorCode\": \"ERR_10004\",\n  \"message\": \"<string>\"\n}"
+														}
+													]
+												}
+											],
+											"id": "2442187a-1584-4446-a953-09b93eb8d6a3"
+										}
+									],
+									"id": "61f094ba-a6b9-4adf-89bf-d90b1f2a9914"
+								}
+							],
+							"id": "053d0f60-ebe3-4416-b883-baf785b9719b"
+						}
+					],
+					"id": "18e19d89-66b1-4b2d-a79a-751fe7e16c0d"
+				}
+			],
+			"id": "a5f37102-9097-476e-8944-3023ca6a5078"
+		}
+	],
+	"variable": [
+		{
+			"id": "38710c5c-5881-4b43-b34f-9fea46464c80",
+			"key": "baseUrl",
+			"value": "https://apps.docusign.com/api/maestro"
+		}
+	]
+}
